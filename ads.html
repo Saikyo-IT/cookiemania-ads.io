@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Получи награду!</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      background: #f0f0f0;
+      background: -webkit-gradient(linear, left top, right bottom, from(#f0f0f0), to(#ffbb00));
+      background: -moz-linear-gradient(top left, #f0f0f0, #ffbb00);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#ffbb00');
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #333333;
+      font-size: 24px;
+      margin-top: 0;
+    }
+    p {
+      color: #666666;
+      font-size: 16px;
+    }
+    .ad-block {
+      width: 300px;
+      height: 250px;
+      background-color: #ffffff;
+      margin: 0 auto;
+    }
+    .button {
+      display: block;
+      width: 150px;
+      height: 50px;
+      background-color: #ffbb00;
+      color: #ffffff;
+      font-size: 16px;
+      margin: 0 auto;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 600px) {
+      .ad-block {
+        width: 100%;
+        height: 200px;
+      }
+
+      .button {
+        width: 100%;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Получи награду!</h1>
+  <p>Смотри рекламу и получай награду!</p>
+  <div class="ad-block"></div>
+  <a href="https://example.com/reward" class="button" id="get-reward-button">Получить награду</a>
+  <script>
+    const adBlock = document.querySelector('.ad-block');
+    const getRewardButton = document.getElementById('get-reward-button');
+
+    // Показать рекламу
+    setTimeout(() => {
+      adBlock.innerHTML = '<iframe src="ad.html" width="100%" height="100%"></iframe>';
+    }, 1000);
+
+    // Скрыть блок рекламы и показать кнопку получения награды
+    getRewardButton.addEventListener('click', () => {
+      adBlock.style.display = 'none';
+      getRewardButton.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
